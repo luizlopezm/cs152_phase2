@@ -73,17 +73,28 @@ s_loop: s_loop statement semicolon {printf( "s_loop -> s_loop statement semicolo
 
 /* MAIN DECLARATION BLOCK */
 declaration: id_loop colon integer {printf( "declaration -> id_loop colon integer\n"); }
-           | id_loop colon array l_bracket number r_bracket of integer {printf( "declaration -> id_loop colon array array l_bracket number r_bracket of integer\n"); }
+           | id_loop colon array l_bracket number r_bracket of integer {printf( "declaration -> id_loop colon array l_bracket number r_bracket of integer\n"); }
        ;
 
-id_loop: id_loop identifier comma {printf( "id_loop -> id_loop identifier com,a\n"); }
+id_loop: id_loop identifier comma {printf( "id_loop -> id_loop identifier comma\n"); }
        | identifier {printf( "id_loop -> identifier\n"); }
        ;
 
 
+/*Comparison*/
+comp: eq {printf( "comp -> eq\n"); }
+    | neq {printf( "comp -> neq\n"); }
+    | lt {printf( "comp -> lt\n"); }
+    | gt {printf( "comp -> gt\n"); }
+    | lte {printf( "comp -> lte\n"); }
+    | gte {printf( "comp -> gte\n"); }
+    ;
 
 
-
+/*Variables*/
+var: identifier {printf( "var -> identifier\n"); }
+   | identifier l_bracket expression r_bracket {printf( "var -> identifier l_bracket expression r_bracket\n"); }
+   ;
 
 
 /*END of Parse*/
@@ -136,6 +147,24 @@ r_bracket: R_SQUARE_BRACKET {printf( "r_bracket -> R_SQUARE_BRACKET\n"); }
         ;
 
 array:  ARRAY { printf( "array -> ARRAY\n"); }
+        ;
+
+eq:  EQ { printf( "eq -> EQ\n"); }
+        ;
+
+neq:  NEQ { printf( "neq -> NEQ\n"); }
+        ;
+
+lt:  LT { printf( "lt -> LT\n"); }
+        ;
+
+gt:  GT { printf( "gt -> GT\n"); }
+        ;
+
+lte:  LTE { printf( "lte -> LTE\n"); }
+        ;
+
+gte:  GTE { printf( "gte -> GTE\n"); }
         ;
 %%
 
