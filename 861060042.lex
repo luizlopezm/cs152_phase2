@@ -7,6 +7,10 @@
  */
 
 %{   
+   #include "y.tab.h"
+   #include <string.h>
+   #include <stdio.h>
+   #include <stdlib.h>
    int Line = 1, Pos = 1;
 %}
 NUM (\.[0-9]+)|([0-9]+(\.[0-9]*)?([eE][+-]?[0-9]+)?)
@@ -76,7 +80,7 @@ ID [A-Za-z](([A-Za-z]|[0-9]|_)*([A-Za-z]|[0-9]))?
 ")"   {Pos += yyleng;   return R_PAREN;}
 "["   {Pos += yyleng;   return L_SQUARE_BRACKET;}
 "]"   {Pos += yyleng;   return R_SQUARE_BRACKET;}
-":="  {Pos += yyleng;   return ASIGN;}
+":="  {Pos += yyleng;   return ASSIGN;}
 
 "\n"           {Line++; Pos = 1;} /*Clean Up*/
 [ \t]+         {Pos += yyleng;}

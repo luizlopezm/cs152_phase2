@@ -85,7 +85,7 @@
      L_PAREN = 301,
      R_PAREN = 302,
      L_SQUARE_BRACKET = 303,
-     R_SQUARE_BRAKET = 304,
+     R_SQUARE_BRACKET = 304,
      ASSIGN = 305
    };
 #endif
@@ -136,7 +136,7 @@
 #define L_PAREN 301
 #define R_PAREN 302
 #define L_SQUARE_BRACKET 303
-#define R_SQUARE_BRAKET 304
+#define R_SQUARE_BRACKET 304
 #define ASSIGN 305
 
 
@@ -144,10 +144,10 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 19 "861060042.y"
+#line 20 "861060042.y"
 {
   double  nval;
-  string  idval;
+  char  *idval;
 }
 /* Line 1529 of yacc.c.  */
 #line 154 "y.tab.h"
